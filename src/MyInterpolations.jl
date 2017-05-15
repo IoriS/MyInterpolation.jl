@@ -8,17 +8,17 @@ immutable MyLinInterp
 end
 
 function (f::MyLinInterp)(x)
-    i = searchsortedlast(MyLinInterp.grid,x)
-    k = searchsortedfirst(MyLinInterp.grid,x)
-    if i == 0 || (i == length(MyLinInterp.grid) && k == length(MyLinInterp.grid) + 1)
+    i = searchsortedlast(f.grid,x)
+    k = searchsortedfirst(f.grid,x)
+    if i == 0 || (i == length(f.grid) && k == length(f.grid) + 1)
         return 0
     end
 
-    if i == length(MyLinInterp.grid) && k != length(MyLinInterp.grid) + 1
-        return (MyLinInterp.vals[i])
+    if i == length(f.grid) && k != length(f.grid) + 1
+        return (f.vals[i])
     end
     
-    interpolated_value = (x - MyLinInterp.grid[i])*(MyLinInterp.vals[i+1]-MyLinInterp.vals[i])/(MyLinInterp.grid[i+1]-MyLinInterp.grid[i])+MyLinInterp.vals[i]
+    interpolated_value = (x - f.grid[i])*(f.vals[i+1]-f.vals[i])/(f.grid[i+1]-f.grid[i])+f.vals[i]
     return interpolated_value 
 end
 
