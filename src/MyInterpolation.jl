@@ -7,7 +7,7 @@ immutable MyLinInterp
     vals::Array
 end
 
-function (f::MyLinInterp)(points::my_lin_interp,x)
+function (f::MyLinInterp)(points::MyLinInterp,x)
     i = searchsortedlast(points.grid,x)
     k = searchsortedfirst(points.grid,x)
     if i == 0 || (i == length(points.grid) && k == length(points.grid) + 1)
