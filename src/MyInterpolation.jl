@@ -1,4 +1,8 @@
-immutable my_lin_interp
+module MyInterpolation
+
+export MyLinInterp
+
+immutable MyLinInterp
     grid::Array
     vals::Array
 end
@@ -16,4 +20,6 @@ function (f::MyLinInterp)(points::my_lin_interp,x)
     
     interpolated_value = (x - points.grid[i])*(points.vals[i+1]-points.vals[i])/(points.grid[i+1]-points.grid[i])+points.vals[i]
     return interpolated_value 
+end
+
 end
