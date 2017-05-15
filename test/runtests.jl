@@ -1,4 +1,4 @@
-using MyInterpolation
+using MyInterpolations
 using Base.Test
 
 const _lin_interp = MyLinInterp

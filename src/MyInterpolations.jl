@@ -1,4 +1,4 @@
-module MyInterpolation
+module MyInterpolations
 
 export MyLinInterp
 
