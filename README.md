@@ -1,2 +1,2 @@
-# MyInterpolation.jl
+# MyInterpolations.jl
 Julia code for interpolation
